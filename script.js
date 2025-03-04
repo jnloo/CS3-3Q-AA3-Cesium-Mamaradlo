@@ -10,6 +10,7 @@ function checkMessage() {
         
     } else if (messageValue.includes('FR')) {
         document.getElementById('result').innerHTML = `The message "${messageValue}" is legitimate!`;
+        
     } else {
         document.getElementById('result').innerHTML = `The message "${messageValue}" is not yet encoded!!`;
     }
