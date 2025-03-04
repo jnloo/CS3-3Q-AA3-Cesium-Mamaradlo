@@ -3,21 +3,29 @@ function checkMessage() {
     let messageValue = prompt("Enter a word to verify:");
     
     let result = document.getElementById('result');
+    
+    let output = '';
 
-    if (messageValue.indexOf('FR') >= 0 && messageValue.indexOf('AI') >= 0) {
-        result.innerHTML = The message "${messageValue}" is legitimate!;
+    if (messageValue.includes('FR') && messageValue.includes('AI')) {
+        output = `The message "${messageValue}" is legitimate!`;
         
-    } else if (
-        messageValue.indexOf('AI') >= 0 ||
-        messageValue.indexOf('aI') >= 0 ||
-        messageValue.indexOf('Ai') >= 0
+        } else if (
+        messageValue.includes('AI') ||
         
-    ) {
-        result.innerHTML = The message "${messageValue}" is tampered!!;
-    } else if (messageValue.indexOf('FR') >= 0) {
-        result.innerHTML = The message "${messageValue}" is legitimate!;
+        messageValue.includes('aI') ||
         
-    } else {
-        result.innerHTML = The message "${messageValue}" is not yet encoded!!;
-    }
+        messageValue.includes('Ai')
+        
+        ) {
+        output = `The message "${messageValue}" is tampered!`;
+        
+        } else if (messageValue.includes('FR')) {
+        output = `The message "${messageValue}" is legitimate!`;
+        
+        } else {
+        output = `The message "${messageValue}" is not yet encoded!`;
+        
+        }
+
+        result.innerHTML = output;
 }
