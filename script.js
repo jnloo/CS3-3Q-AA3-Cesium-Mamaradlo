@@ -1,21 +1,23 @@
 function checkMessage() {
     
-    let messageValue = prompt('Enter a message: ');
+    let messageValue = prompt("Enter a word to verify:");
     
-    let resultMessage = '';
+    let result = document.getElementById('result');
 
-    if (messageValue.indexOf('aI') !== -1 || messageValue.indexOf('Ai') !== -1) {
-        resultMessage = 'fake!';
+    if (messageValue.indexOf('FR') >= 0 && messageValue.indexOf('AI') >= 0) {
+        result.innerHTML = The message "${messageValue}" is legitimate!;
         
-        } else if (messageValue.indexOf('FR') !== -1 && messageValue.indexOf('AI') !== -1) {
-        resultMessage = 'legitimate!';
+    } else if (
+        messageValue.indexOf('AI') >= 0 ||
+        messageValue.indexOf('aI') >= 0 ||
+        messageValue.indexOf('Ai') >= 0
         
-        } else if (messageValue.indexOf('FR') !== -1 || messageValue.indexOf('AI') !== -1) {
-        resultMessage = 'legitimate!';
+    ) {
+        result.innerHTML = The message "${messageValue}" is tampered!!;
+    } else if (messageValue.indexOf('FR') >= 0) {
+        result.innerHTML = The message "${messageValue}" is legitimate!;
         
-        } else {
-        resultMessage = 'not yet encoded!';
-        }
-
-        document.getElementById('result').innerHTML = `The message "${messageValue}" is ${resultMessage}`;
+    } else {
+        result.innerHTML = The message "${messageValue}" is not yet encoded!!;
+    }
 }
