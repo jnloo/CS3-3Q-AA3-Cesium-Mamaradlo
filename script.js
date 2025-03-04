@@ -1,4 +1,4 @@
-function checkMessages() {
+function checkMessage() {
     
     let messageValue = prompt("Enter a word to verify:");
     let result = document.getElementById('result');
