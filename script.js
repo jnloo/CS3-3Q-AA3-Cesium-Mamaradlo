@@ -1,4 +1,5 @@
 function checkMessage() {
+    
     let messageValue = prompt("Enter a word to verify: ");
 
     if ((messageValue.indexOf('FR') >= 0) && (messageValue.indexOf('AI') >=0)) {
