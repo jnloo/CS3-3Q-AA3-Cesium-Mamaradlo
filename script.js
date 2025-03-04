@@ -8,13 +8,9 @@ function checkMessage() {
     } else if (messageValue.includes('AI') || messageValue.toLowerCase().includes('ai')) {
         document.getElementById('result').innerHTML = `The message "${messageValue}" is tampered!!`;
         
-    } else if (messageValue.includes('FR') || messageValue.toLowerCase().includes('fr'))  {
+    } else if (messageValue.includes('FR')) {
         document.getElementById('result').innerHTML = `The message "${messageValue}" is legitimate!`;
-        
     } else {
         document.getElementById('result').innerHTML = `The message "${messageValue}" is not yet encoded!!`;
-        
     }
 }
-
-
